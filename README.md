@@ -13,7 +13,8 @@ This is the bundle responsible to publish any JAX-RS resources.
   cd ./jax-rs-example/
   mvn clean install 
 ```
-3. Build Swagger for OSGI. Until issue #272 is closed you need to build the bundles from my fork located at: `https://github.com/ddragosd/swagger-core/tree/scala_2.10.0`
+3. Build Swagger for OSGI. Until issue [#272](https://github.com/wordnik/swagger-core/issues/272) is closed you need to build the bundles from my fork located at: `https://github.com/ddragosd/swagger-core/tree/scala_2.10.0`
+
 #### Building the Apache Karaf Launchpad
 
 ```
