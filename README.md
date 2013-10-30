@@ -5,14 +5,15 @@ Simple Karaf Launchpad wrapping JAX-RS feature with a JAX-RS publisher and Swagg
 
 #### Building JAX-RS publisher and a JAX-RS sample project
 
-1. Build `https://github.com/ddragosd/osgi-jax-rs-connector/tree/master/bundles/com.eclipsesource.jaxrs.publisher`. 
+1. Build a sample of a JAX-RS publisher for OSGI. Its purpose is to track JAX-RS resources that get added or removed and make them available through Jersey.
+`https://github.com/ddragosd/osgi-jax-rs-connector/tree/master/bundles/com.eclipsesource.jaxrs.publisher`. 
 This is the bundle responsible to publish any JAX-RS resources.
-2. Build jaxrs-example
+2. Build jaxrs-example. This contains a simple JAX-RS resource to play with.
 ```
   cd ./jax-rs-example/
   mvn clean install 
 ```
-
+3. Build Swagger for OSGI. Until issue #272 is closed you need to build the bundles from my fork located at: `https://github.com/ddragosd/swagger-core/tree/scala_2.10.0`
 #### Building the Apache Karaf Launchpad
 
 ```
@@ -47,3 +48,8 @@ karaf@root>
 #### Playing with JAX-RS samples
 To view the JAX-RS samples in action simply open a browser to `http://localhost:8181/api/hello` 
 The source code for the resource that displays the message is found at : `https://github.com/ddragosd/jax-rs-on-karaf/blob/master/jax-rs-example/src/main/java/jaxrs/example/hello/HelloWorldResource.java`.
+
+
+#### DISCALIMER 
+This is not production ready code. I've published it in order to demonstrate how easy it is to get started with JAX-RS in the OSGI world. 
+Feel free to use it as-is without any warranty.
