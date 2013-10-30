@@ -9,6 +9,42 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>bundle</packaging>
 
+    <profiles>
+        <profile>
+            <!--
+                Use this profile to install the OSGi bundle
+                automatically, during development
+            -->
+            <id>autoInstallBundle</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.sling</groupId>
+                        <artifactId>maven-sling-plugin</artifactId>
+                        <version>2.0.4-incubator</version>
+                        <executions>
+                            <execution>
+                                <id>install-bundle</id>
+                                <goals>
+                                    <goal>install</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <slingUrl>http://localhost:8181/system/console</slingUrl>
+                            <user>admin</user>
+                            <password>admin</password>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
     <dependencies>
         <!-- OSGi support annotations -->
         <dependency>
