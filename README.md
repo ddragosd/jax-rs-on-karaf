@@ -14,6 +14,7 @@ This is the bundle responsible to publish any JAX-RS resources.
   mvn clean install 
 ```
 3. Build Swagger for OSGI. Until issue [#272](https://github.com/wordnik/swagger-core/issues/272) is closed you need to build the bundles from my fork located at: `https://github.com/ddragosd/swagger-core/tree/scala_2.10.0`
+4. To be added: `swagger-OSGI-connector` bundle. Its purpose is to reset Swagger cache every time a new Jax-RS resource is published.
 
 #### Building the Apache Karaf Launchpad
 
